@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+<category>
+    <pattern>Start</pattern>
+    <template>Hello, Are you looking for advice on which career path to choose?
+    
+    <reply>
+        <text>Yes</text>
+        <postback>CAyes</postback> 
+    </reply><!-- Reply yes for career advice -->
+    
+    <reply>
+        <text>No</text>
+        <postback>CAno</postback> 
+    </reply><!-- Reply no for career advice  -->
+    
+    </template> <!-- Career advice question branch.  -->
+    
+    
+</category> <!-- Starts program using start keyword. -->
+    
+    <category>
+    <pattern>CAyes</pattern>
+    <template>Ok, Let me ask a couple more questions to help you choose. Are you a computer science student? 
+    
+    <reply>
+        <text>Yes</text>
+        <postback>CSyes</postback> 
+    </reply> <!-- Reply yes to CS student  -->
+    
+    <reply>
+        <text>No</text>
+        <postback>CSno</postback>
+    </reply>  <!-- Reply No for computer science student  -->
+    
+    </template><!-- CS Student question  -->
+</category>
+
+<category>
+    <pattern>CSyes</pattern>
+    <template> Do you like Programming? 
+    
+<reply>
+    <text>No</text>
+    <postback>Pno</postback>
+</reply>
+
+<reply>
+    <text>Yes</text>
+    <postback>Pyes</postback> <!-- answer yes to programming. recommend software developer, Video game developer, or web developer -->
+</reply>
+    
+    
+    </template>
+</category>
+
+
+<category>
+    <pattern>Pyes</pattern>
+    <template>Out of the Three listed below which would you prefer to work on?
+    
+    <reply>
+        <text>Video Games</text>
+        <postback>VideoGames</postback>
+    </reply> <!--Video game branch  -->
+    
+    <reply>
+        <text> Applications</text>
+        <postback>Applications</postback>
+    </reply><!-- Applications branch -->
+    
+    <reply>
+        <text>Websites</text>
+        <postback>WebDev</postback>
+    </reply> <!-- Website branch -->
+    
+     </template>
+</category> <!-- Yes branch for do you like programming  -->
+
+<category>
+    <pattern>Pno</pattern>
+    <template>Do you want to be in charge of people or just the systems you work on?
+    
+    <reply>
+        <text>People</text>
+        <postback>People</postback>
+    </reply> <!-- People Reply -->
+    
+    <reply>
+        <text>Systems</text>
+        <postback>Systems</postback>
+    </reply> <!-- Systems reply -->
+    
+    </template>
+</category> <!-- no branch for programming -->
+
+<category>
+    <pattern>People</pattern>
+    <template>
+       <button>
+           <text>Project Manager Job Description</text>
+           <url>https://www.indeed.com/hire/job-description/it-project-manager#:~:text=An%20IT%20Project%20Manager%2C%20or,on%20projects'%20progress%20and%20results.</url>
+       </button>
+        
+    </template>
+</category> <!-- Project Manager link -->
+
+<category>
+    <pattern>Systems</pattern>
+    <template>
+        <button>
+            <text>Systems Architect</text>
+            <url>https://www.fieldengineer.com/skills/systems-architect#:~:text=Systems%20architect%20is%20typically%20recognized,the%20requirements%20of%20specific%20clients.</url>
+        </button>
+     </template>
+</category> <!-- Systems Arcitect job description -->
+
+<category>
+    <pattern>Applications</pattern>
+    <template>
+        <button>
+            <text>Software Developer</text>
+            <url>https://www.indeed.com/hire/job-description/software-developer</url>
+        </button>
+        
+    </template>
+</category> <!-- Software developer job description -->
+
+<category>
+    <pattern>VideoGames</pattern>
+    <template>
+        <button>
+            <text>Video Game Developer</text>
+            <url>https://www.betterteam.com/video-game-developer-job-description#:~:text=Video%20game%20developers%2C%20also%20known,%2C%20animation%2C%20and%20unit%20testing.</url>
+        </button>
+    </template>
+</category> <!-- Video Game Developer Job Description -->
+
+<category>
+    <pattern>WebDev</pattern>
+    <template>
+        <button>
+            <text>Web Developer</text>
+            <url>https://www.betterteam.com/web-developer-job-description</url>
+            </button>
+    </template>
+</category>
+
+
+<!-- JOBS being used for requirements. 
+1. Software developer
+2. Web Developer
+3. Project Manager
+4. Systems Architect
+5.Video game Developer.-->
+
+<category>
+    <pattern>CSno</pattern>
+    <template>Sorry, i cannot help you right now as i can only recommend computer science related jobs at this time.</template>
+</category> <!-- No response for if you are CS Student -->
+
+<category>
+    <pattern>CANo</pattern>
+    <that>Hello, Are you looking for advice on which career path to choose</that>
+    <template>Sorry, i cannot help you right now.</template>
+</category> <!-- No response for if you are lookning for career advice -->
+
+<category>
+    <pattern>*</pattern>
+    <template>I dont have an answer for that one. Please type "Start" to begin </template>
+</category> <!-- Unknown response prompt --> 
+
+
+
+<!-- ill need this later
+<category>
+<pattern>TEST LINK</pattern>
+<template> 
+    <link>
+        <text>Pandorabots</text>
+        <url>https://www.pandorabots.com/</url>
+    </link>
+</template>
+</category>  
+
+-->
+
+
+</aiml>
